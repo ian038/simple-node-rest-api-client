@@ -10,19 +10,28 @@ app.get('/', function (req, res) {
 
 app.get('/read', function (req, res) {
     fs.readFile(__dirname + "/" + "spartans.json", 'utf8', function (err, data) {
-        console.log(data);
-        res.end(data);
+        console.log("List of spartans " + data);
+        res.json(JSON.parse(data));
     });
 })
 
 app.post('/create', function (req, res) {
-    console.log(req.body)
+    console.log("Creating new spartan: ", req.body)
     res.json(req.body)
 })
 
 app.put('/update', function (req, res) {
-    console.log(req.body)
+    console.log("Updating spartan info: ", req.body)
     res.json(req.body)
+})
+
+app.delete('/remove/:spartanId', function (req, res) {
+    const { spartanId } = req.params
+    fs.readFile(__dirname + "/" + "spartans.json", 'utf8', function (err, data) {
+        data = JSON.parse(data)
+        console.log("Deleting spartan", data["spartan" + spartanId])
+        res.json(data["spartan" + spartanId])
+    });
 })
 
 const port = process.env.PORT || 5000

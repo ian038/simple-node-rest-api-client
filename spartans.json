@@ -1,17 +1,17 @@
 {
-   "spartan1": {
-      "name": "John",
-      "team": "blue",
-      "id": "117"
+   "spartan117": {
+      "id": "117",
+      "title": "John",
+      "description": "blue"
    },
-   "spartan2": {
-      "name": "Jerome",
-      "team": "red",
-      "id": "092"
+   "spartan092": {
+      "id": "092",
+      "title": "Jerome",
+      "description": "red"
    },
-   "spartan3": {
-      "name": "Jai",
-      "team": "gray",
-      "id": "006"
+   "spartan006": {
+      "id": "006",
+      "title": "Jai",
+      "description": "gray"
    }
 }
