@@ -20,6 +20,11 @@ app.post('/create', function (req, res) {
     res.json(req.body)
 })
 
+app.put('/update', function (req, res) {
+    console.log(req.body)
+    res.json(req.body)
+})
+
 const port = process.env.PORT || 5000
 
 app.listen(port, () => {
